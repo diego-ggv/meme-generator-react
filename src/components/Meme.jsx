@@ -1,26 +1,9 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import memesData from '../data/data.json'
 import troll from '../assets/images/troll-face-computer.jpg'
 
-/**
- * Challenge: Update our state to save the meme-related
- * data as an object called `meme`. It should have the
- * following 3 properties:
- * topText, bottomText, randomImage.
- *
- * The 2 text states can default to empty strings for now,
- * amd randomImage should default to "http://i.imgflip.com/1bij.jpg"
- *
- * Next, create a new state variable called `allMemeImages`
- * which will default to `memesData`, which we imported above
- *
- * Lastly, update the `getMemeImage` function and the markup
- * to reflect our newly reformed state object and array in the
- * correct way.
- */
-
 function Meme() {
-  const [allMemesImages, setAllMemesImages] = useState(memesData)
+  const [allMemesImages, setAllMemesImages] = useState(memesData.data.memes)
 
   const [meme, setMeme] = useState({
     topText: '',
@@ -30,7 +13,11 @@ function Meme() {
 
   function getMemeImg() {
     const randomNumber = Math.floor(Math.random() * allMemesImages.length)
-    setMeme(allMemesImages[randomNumber].url)
+    const randomMeme = allMemesImages[randomNumber].url
+    setMeme(prevState => ({
+      ...prevState, 
+      randomImg: randomMeme
+    }))
   }
 
   return (
