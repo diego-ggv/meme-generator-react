@@ -1,0 +1,92 @@
+/*  Variables */
+/*  ========= */
+:root {
+  --primary-color: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);;
+  --dark-color: rgba(0, 0, 0, 0.69);
+}
+
+/*  General */
+* {
+  box-sizing: border-box;
+  font-family: "Avenir Next", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: var(--primary-color);
+  color: #fff;
+}
+
+main {
+  max-width: 620px;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+
+/*  Header */
+
+.header--troll {
+  margin-right: 20px;
+  width: 60px;
+}
+
+.header--title {
+  font-weight: normal;
+}
+
+.header--course {
+  margin-left: auto;
+  font-weight: lighter;
+}
+
+/*  Main */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+}
+
+.input {
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 2px #3E3E3EAF;
+  text-indent: 10px;
+  font-size: 1.2rem;
+}
+
+.button {
+  margin: 20px auto 40px;
+  padding: 10px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: medium;
+  width: 100%;
+  grid-column: 1 / -1;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.meme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
